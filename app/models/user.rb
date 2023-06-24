@@ -6,7 +6,7 @@ class User < ApplicationRecord
     :jwt_authenticatable,
     jwt_revocation_strategy: self
 
-  enum role: { admin: 1, cashier: 2 }
+  enum role: { admin: 1, staff: 2 }
   before_validation :set_jti, only: :create
 
   private
