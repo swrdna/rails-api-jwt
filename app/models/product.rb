@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 class Product < ApplicationRecord
-  before_validation :set_code, only: :create
+  before_validation :set_code, on: :create
 
   private
 
   def set_code
-    code = SecureRandom.hex(3)
+    self.code = SecureRandom.hex(3)
   end
 end
